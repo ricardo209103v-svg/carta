@@ -1,0 +1,176 @@
+/* Configuraciones generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #ffe5ec 0%, #ffc2d1 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 20px;
+}
+
+/* Estilo de la carta */
+.contenedor-carta {
+    background-color: #ffffff;
+    max-width: 550px;
+    width: 100%;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid #fb6f92;
+    transition: all 0.5s ease;
+    position: relative;
+    z-index: 10;
+}
+
+.cabecera-carta {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.icono-corazon {
+    font-size: 3rem;
+    animation: latido 1.2s infinite;
+}
+
+h1 {
+    color: #ff477e;
+    font-size: 1.8rem;
+    margin-top: 10px;
+}
+
+.fecha {
+    color: #a3a3a3;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #ffe5ec;
+    margin: 20px 0;
+}
+
+.cuerpo-carta {
+    color: #4a4a4a;
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+
+.saludo {
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #ff477e;
+}
+
+p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.pregunta {
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.3rem;
+    color: #ff477e;
+    margin-top: 25px;
+}
+
+/* Contenedor de Botones */
+.botones-contenedor {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    height: 50px;
+    position: relative;
+}
+
+.btn {
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.si {
+    background-color: #ff477e;
+    color: white;
+}
+
+.si:hover {
+    background-color: #ff5c8a;
+    transform: scale(1.1);
+}
+
+.no {
+    background-color: #f0f0f0;
+    color: #666;
+    position: absolute; /* Permite el movimiento libre con JS */
+    right: 30%; /* Posición inicial */
+}
+
+/* Pantalla de Éxito (Oculta por defecto) */
+.oculto {
+    display: none !important;
+}
+
+.pantalla-exito {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 229, 236, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.contenido-exito {
+    text-align: center;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(255, 71, 126, 0.2);
+    border: 2px solid #ff477e;
+    max-width: 450px;
+    animation: aparecer 0.5s ease forwards;
+}
+
+.contenido-exito h2 {
+    color: #ff477e;
+    margin-bottom: 15px;
+}
+
+.corazones-animados {
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+/* Animaciones */
+@keyframes latido {
+    0% { transform: scale(1); }
+    20% { transform: scale(1.15); }
+    40% { transform: scale(1); }
+    60% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+@keyframes aparecer {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
